@@ -1,0 +1,20 @@
+{
+  "name": "souka",
+  "version": "1.0.0",
+  "description": "Фэшн ньюз агрегатор для Брогдана.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StrAnastasia/souka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StrAnastasia/souka/issues"
+  },
+  "homepage": "https://github.com/StrAnastasia/souka#readme"
+}
