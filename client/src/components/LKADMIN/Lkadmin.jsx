@@ -3,10 +3,16 @@ import axios from 'axios';
 
 export default function Lkadmin() {
   const [inviteEmail, setInviteEmail] = useState("")
+  const [newadmin, setNewadmin] = useState("")
 
   function emailChangeHandler(e) {
     setInviteEmail(e.target.value)
   }
+
+  function adminemailChangeHandler(e) {
+    setNewadmin(e.target.value)
+  }
+
 
   function submitHandler() {
     axios.post('http://localhost:3001/lK/invite', {
@@ -14,6 +20,14 @@ export default function Lkadmin() {
       inviteEmail
     })
   }
+
+  function submitAdminHandler() {
+    axios.post('http://localhost:3001/lK/invite', {
+      adminEmail: 'margosha2.novikova@gmail.com',
+      newadmin
+    })
+  }
+
 
   return (
     <>
@@ -185,7 +199,22 @@ export default function Lkadmin() {
             </div>
             <div className='d-flex justify-content-end'>
 
-              <button type="submit" className="btn-primary">Ворваться</button>
+              <button type="submit" className="btn-primary">Отправить</button>
+            </div>
+          </form>
+
+        </div>
+        <div className='container-s border border-primary mt-5 mb-5 p-2' style={{ height: "200px" }}>
+          <form className='mt-4 mx-3' onSubmit={submitAdminHandler}>
+            <label for="exampleInputEmail1" className="form-label">
+              <h5>Добавить админа:</h5>
+            </label>
+            <div className="mb-3 text-center ">
+              <input type="email" value={newadmin} onChange={adminemailChangeHandler} placeholder='имейл' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            </div>
+            <div className='d-flex justify-content-end'>
+
+              <button type="submit" className="btn-primary">Добавить</button>
             </div>
           </form>
 
